@@ -1,0 +1,45 @@
+GET http://localhost:3002/api/countries
+
+###
+
+
+GET http://localhost:3002/api/countries/:id/2
+
+
+
+
+###
+
+POST http://localhost:3002/api/countries
+Content-Type: application/json
+
+
+
+{
+    "name": "Kenya",
+    "continent": "Afrika",
+    "language": "Bantu Swahili",
+    "id": 4
+}
+
+
+###
+
+
+PUT http://localhost:3002/api/countries/3
+Content-Type: application/json
+
+
+{
+    "name": "Norge",
+    "continent": "Europe",
+    "language": "Norweigen"
+}
+
+
+###
+
+DELETE http://localhost:3002/api/countries/2
+Content-Type: application/json
+
+
