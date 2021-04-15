@@ -10,11 +10,11 @@
  ### PUT - 
  ### DELETE - 
 
- ## I have done all off theses endpoints.
+ ### I have done all off theses endpoints.
  ### I have 4 endpoints that meet the requirements each endpoint must perform
  ### I have a Server.rest file where you can reach these endpoints and where the information is saved locally
  ### I have used GIT to push my repo to GITHUB
- ### And i have a README.md file like you see ;)
+ 
 
  
 
