@@ -33,7 +33,7 @@ Content-Type: application/json
 {
     "name": "Norge",
     "continent": "Europe",
-    "language": "Norweigen"
+    "language": "Norwegian"
 }
 
 
