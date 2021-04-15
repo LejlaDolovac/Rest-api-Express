@@ -54,8 +54,6 @@ app.post('/api/countries', async (req, res) => {
     countries.push(saveNewCountrie)
 
 
-    console.log(countries);
-
     res.json(
         {
           status: "You just added " + saveNewCountrie.name + " as a new countrie!",
@@ -69,9 +67,6 @@ app.put('/api/countries/:id', (req, res) => {
     const id = parseInt(req.params.id)
     let findId = countries.find(countrie => countrie.id == id)
 
-    console.log(findId , "findID")
-    console.log(req.body, "req.body")
-
     if(findId) {
             findId.name = req.body.name
             findId.continent = req.body.continent
@@ -84,7 +79,6 @@ app.put('/api/countries/:id', (req, res) => {
                 )   
 
          } else {
-        console.log(findId)
         res.status(Error).send("NOT ABLE TO UPDATE USER!")
     }  
 });
@@ -98,11 +92,9 @@ app.delete('/api/countries/:id', (req, res) => {
 
     const deleteId = countries.find(countrie => countrie.id === id)
     if(deleteId){
-       console.log(deleteId.id)
        countries = countries.filter(countrie => countrie.id !== id)
        res.status(200).json(deleteId)
     } else {
-        console.log(deleteId)
        res.status(404).json({ message: "CANT FIND WHAT YOUR ARE LOOKING FOR!"})
     }
 })
