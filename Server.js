@@ -50,14 +50,31 @@ app.post('/api/countries', async (req, res) => {
         res.status(Error).send("NOT ABLE TO UPDATE USER!")
     }
     let saveNewCountrie =  req.body
+    let alreadyExists = false
 
-    countries.push(saveNewCountrie)
-
-
-    res.json(
-        {
-          status: "You just added " + saveNewCountrie.name + " as a new countrie!",
+    for(let index = 0; index < countries.length; index++){
+        if(saveNewCountrie.id === countries[index].id){
+            alreadyExists = true
+        } 
+    }
+    if(alreadyExists === false){
+        countries.push(saveNewCountrie)
+        res.json(
+            {
+              status: "You just added " + saveNewCountrie.name + " as a new countrie!",
+            })
+    } else {
+        res.json({
+            status: 'You cannot add the same id, please try again!'
         })
+    }
+    
+    // res.json(
+    //     {
+    //       status: "You just added " + saveNewCountrie.name + " as a new countrie!",
+    //     })
+
+
     
 });
 
@@ -102,6 +119,6 @@ app.delete('/api/countries/:id', (req, res) => {
 
 
 
-app.listen(portal, () =>{
+app.listen(portal, () => {
     console.log(`Server is running on portal http:://localhost:${portal}`)
 })
