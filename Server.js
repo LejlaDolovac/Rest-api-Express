@@ -69,10 +69,7 @@ app.post('/api/countries', async (req, res) => {
         })
     }
     
-    // res.json(
-    //     {
-    //       status: "You just added " + saveNewCountrie.name + " as a new countrie!",
-    //     })
+   
 
 
     
